@@ -1,0 +1,48 @@
+<div class="container">
+    <a href="insert_mahasiswa.php">
+        <button class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span>
+            Insert Data
+        </button>
+    </a>
+    <br><br>
+    <?php if(!empty($notif_success)) : ?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <?=$notif_success?>
+        </div>
+    <?php endif; ?>
+    
+    <h2>Data Mahasiswa</h2>   
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nama Mahasiswa</th>
+            <th>Email</th>
+            <th>Alamat</th>
+            <th>No Handphone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($results as $rows) : ?>
+          <tr>
+            <td><?=$rows['id_mahasiswa']?></td>
+            <td><?=$rows['nama_mahasiswa']?></td>
+            <td><?=$rows['email']?></td>
+            <td><?=$rows['alamat']?></td>
+            <td><?=$rows['no_hp']?></td>
+            <td>
+                <a href="edit_mahasiswa.php?id_mahasiswa=<?=$rows['id_mahasiswa']?>">
+                    <button class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+                </a>
+                <a href="index.php?delete=<?=$rows['id_mahasiswa']?>">
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Hapus</button>
+                </a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

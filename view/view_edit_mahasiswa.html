@@ -1,0 +1,54 @@
+<?php
+    include 'view/header_layout.html';
+?>
+
+<?php if(!empty($notif_blank)) : ?>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <?=$notif_blank?>
+    </div>
+<?php endif; ?>
+
+<?php if(!empty($notif_success)) : ?>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <?=$notif_success?>
+    </div>
+<?php endif; ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <form action="" method="POST" role="form">
+                <div class="form-group">
+                    <label for="nama">Nama Mahasiswa</label>
+                    <input class="form-control" type="text" name='nama_mahasiswa' value='<?=$nama_mahasiswa;?>' placeholder="Nama Mahasiswa">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input class="form-control" type="text" name="email" value='<?=$email;?>'
+                placeholder="Nama Mahasiswa">
+                </div>
+                
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input class="form-control" type="text" name="alamat" value='<?=$alamat;?>' placeholder="Alamat">
+                </div>
+                
+                <div class="form-group">
+                    <label for="no_hp">No. Handpone</label>
+                    <input class="form-control" type="text" name="no_hp" value='<?=$no_hp;?>'
+                placeholder="No Handpone">
+                </div>
+                
+                <div class="form-group">
+                        <button name="save" value="1" class="btn btn-success"><span class="glyphicon glyphicon-save"></span> Save</button>
+                        <a href="index.php" class="btn btn-success">
+                            <span class="glyphicon glyphicon-arrow-left"></span> Back to home
+                        </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
